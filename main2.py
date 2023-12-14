@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load the trained model
-model = tf.keras.models.load_model("modelsss.h5")
+model = tf.keras.models.load_model("model.h5")
 
 # Load the data and perform preprocessing
 db = pd.read_csv("dataset/Restaurants_Penang3.csv")
