@@ -215,4 +215,4 @@ def Predict3():
         return render_template("predict3.html", user_keywords=user_keywords, recommendations=recommendations)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
