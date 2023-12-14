@@ -1,3 +1,5 @@
 # FYP Web Demo Application
 
-THIS IS A DEMO SITE FOR THE RECOMMENDATION ENGINE PART OF MY FYP
+This is a demo site for the recommendation engine part of my fyp
+
+FYP title - Food and Restaurant Recommendation System
