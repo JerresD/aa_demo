@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="/static/style1.css">
+  <script type="text/javascript" src="/static/script.js"></script>
+</head>
+
+<body>
+  {% include 'header.html' %}
+  {% include 'menu2.html' %}
+  {% block body %}
+  {% endblock %}
+  <div class="start">
+    <h1>Food Recommendation</h1>
+    <div class="sub-title">
+      <p>based on <span class="highlight">input keywords</span>.</p>
+    </div>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div id="liked-restaurants-section">
+          <div class="liked-title">
+            <h3>Liked Restaurants</h3>
+            <span class="close" onclick="closeModal()">&times;</span>
+          </div>
+          <ul id="liked-restaurants-list" class="liked-content"></ul>
+          <button onclick="clearLikedItems()">CLEAR</button>
+        </div>
+      </div>
+    </div>
+
+    {% if recommendations %}
+    <h3>Top 6 Recommended Foods:</h3>
+    <p class="food-keyword">Keywords: {{user_keywords}}</p>
+    <ul class="food-container">
+        {% for recommendation in recommendations %}
+            <li class="food-box">
+              <p>{{ recommendation['Name'] }}</p>
+              <p>Prediction Score: {{ recommendation['Score']|round(2) }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    
+
+
+
+  </div>
+  <script>
+    
+  </script>
+
+
+</body>
+
+</html>

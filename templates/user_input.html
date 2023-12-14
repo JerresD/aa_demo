@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="/static/style1.css">
+  <script type="text/javascript" src="/static/script.js"></script>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    {% include 'menu2.html' %}
+    {% block body %}
+    {% endblock %}
+
+  <div class="start">
+    <h1>Restaurant Recommendation</h1>
+    <div class="sub-title">
+      <p>Select preferred choices to generate recommendation</p>
+      <p>result based on <span class="highlight">user input</span>.</p>
+    </div>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div id="liked-restaurants-section">
+          <div class="liked-title">
+            <h3>Liked Restaurants</h3>
+            <span class="close" onclick="closeModal()">&times;</span>
+          </div>
+          <ul id="liked-restaurants-list" class="liked-content"></ul>
+          <button onclick="clearLikedItems()">CLEAR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <!-- <input type="text" name="Cuisine Type" placeholder="Cuisine Type" required="required" /> -->
+
+      <h3>Preferred Cuisine Type</h3>
+      <div class="container">
+        <ul class="ul-box">
+          {% for item in checkBox1 %}
+          <li>
+            <input type="checkbox" id="{{ item }}" name="Cuisine Type" value="{{ item }}" />
+            <label for="{{ item }}">{{ item }}</label>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <h3>Preferred Price Level</h3>
+      <div class="container">
+        <ul class="ul-box">
+          {% for item in checkBox2 %}
+          <li>
+            <input type="radio" id="{{ item }}" name="Price Level" value="{{ item }}" />
+            <label for="{{ item }}">{{ item }}</label>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- <input type="text" name="Price Level" placeholder="Price Level" required="required" /> -->
+
+      <button type="submit" class="btn">PREDICT</button>
+    </form>
+
+
+  </div>
+
+
+</body>
+
+</html>

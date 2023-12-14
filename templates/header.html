@@ -1,0 +1,73 @@
+<nav class="header-bar">
+    <a href="#" class="logo">FOODIE.</a>
+    <div class="header-container" id="myDIV">
+        <ul>
+            <li class="header-btn active"><a onclick="setActive('Home')" href="/">Home</a></li>
+            <li class="header-btn"><a onclick="setActive('Demo')" href="/user-input">Demo</a></li>
+            <div onclick="openModal()" class="global-like">&#x2665; LIKED</div>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    // Function to set active link
+    function setActive(groupName) {
+        // Remove "active" class from all li elements
+        var menuItems = document.querySelectorAll('.header-btn');
+        menuItems.forEach(function (item) {
+            item.classList.remove('active');
+        });
+
+        // Add "active" class to the clicked li element
+        var clickedElement = document.querySelector(`[onclick="setActive('${groupName}')"]`);
+        clickedElement.parentNode.classList.add('active');
+
+        // Store the active link in localStorage
+        localStorage.setItem('activeLink', groupName);
+
+        // You can add additional logic here based on the groupName if needed
+        console.log(groupName + " link clicked!");
+    }
+
+    // Check if there is an active link in localStorage and set it
+    document.addEventListener('DOMContentLoaded', function () {
+        var activeLink = localStorage.getItem('activeLink');
+        if (activeLink) {
+            setActive(activeLink);
+        }
+    });
+</script>
+
+<!-- <script>
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("header-btn");
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            // Remove "active" class from all buttons
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove("active");
+            }
+
+            // Add "active" class to the clicked button
+            this.classList.add("active");
+        });
+    }
+
+    // Check if the link corresponds to the current page and set it as active
+    var currentPath = window.location.pathname;
+    for (var i = 0; i < btns.length; i++) {
+        if (btns[i].querySelector("a").getAttribute("href") === currentPath) {
+            // Remove "active" class from all buttons
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove("active");
+            }
+
+            // Add "active" class to the button corresponding to the current page
+            btns[i].classList.add("active");
+            break; // Break the loop after setting the active class
+        }
+    }
+
+</script> -->

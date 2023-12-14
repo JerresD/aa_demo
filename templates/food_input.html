@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="/static/style1.css">
+  <script type="text/javascript" src="/static/script.js"></script>
+</head>
+
+<body>
+  {% include 'header.html' %}
+  {% include 'menu2.html' %}
+  {% block body %}
+  {% endblock %}
+  <div class="start">
+    <h1>Food Recommendation</h1>
+    <div class="sub-title">
+      <p>Enter any <span class="highlight">keyword</span> about food</p>
+    </div>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div id="liked-restaurants-section">
+          <div class="liked-title">
+            <h3>Liked Restaurants</h3>
+            <span class="close" onclick="closeModal()">&times;</span>
+          </div>
+          <ul id="liked-restaurants-list" class="liked-content"></ul>
+          <button onclick="clearLikedItems()">CLEAR</button>
+        </div>
+      </div>
+    </div>
+
+    <form action="{{ url_for('Predict3') }}" method="post">
+        <div class="keyword-container">
+            <input type="text" id="keywords" name="keywords" class="food-input" placeholder="ENTER KEYWORDS">  
+            <br>   
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+
+
+
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="/static/style1.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script type="text/javascript" src="/static/script.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  {% include 'header.html' %}
+  {% block body %}
+  {% endblock %}
+
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id="liked-restaurants-section">
+        <div class="liked-title">
+          <h3>Liked Restaurants</h3>
+          <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <ul id="liked-restaurants-list" class="liked-content"></ul>
+        <button onclick="clearLikedItems()">CLEAR</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-background">
+    <div class="main-title">
+      <h2>食べ物とレストラン推薦システム</h2>
+      <p>これは私のFYPの推薦エンジン部分のデモサイトです。</p>
+      <br>
+      <a href="/">EN/JP</a>
+    </div>
+    <!-- <img src="/static/asset/4.png" alt="Image"> -->
+  </div>
+
+
+  <div class="start">
+    <div class="flex padding-top">
+      <div class="main-img-container">
+        <img src="/static/asset/5.jpg" />
+      </div>
+      <div class="heading2">
+        <h3>私のFYPについて</h3>
+        <p>ユーザーの食事の好みを 予測し、食べ物やレスト ランを提案できるモバイ ルベースの推薦 システム です。</p>
+        <h3>AI</h3>
+        <p>Hybrid Filtering (Wide and Deep)</p>
+        <p>Content-based Filtering</p>
+      </div>
+    </div>
+    <div class="padding-top">
+      <h1>モジュール</h1>
+      <div class="align-center">
+        <p>システムは<span class="highlight">3つのモジュール</span>で構成され、<span class="highlight">一般ユーザー
+            </span>と<span class="highlight">レストラン管理者</span>に対応します。</p>
+      </div>
+
+      <div class="flex align-center">
+        <div class="module-container">
+          <div class="module-box">
+            <i class="fa fa-filter" style="font-size: 50px"></i>
+            <h4>フィルタリングと推奨モジュール</h4>
+          </div>
+        </div>
+        <div class="module-container">
+          <div class="module-box">
+            <i class="fa fa-map-marker" style="font-size: 50px"></i>
+            <h4>位置特定モジュール</h4>
+          </div>
+        </div>
+        <div class="module-container">
+          <div class="module-box">
+            <i class="fa fa-cutlery" style="font-size: 50px"></i>
+            <h4>レストランデータ詳細管理モジュール</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-top">
+      <h1>使い方</h1>
+      <div class="align-center">
+        <p>システムは、<span class="highlight">ユーザーの好み</span>を取得して推奨結果を生成します。</p>
+      </div>
+      <div class="padding-top">
+        <div class="function-box">
+          <div class="function1">
+            <p style="font-size: 18px;">1. &nbsp; </p>
+            <p>料理の種類</p>
+          </div>
+          <div class="function1">
+            <p style="font-size: 18px;">2. &nbsp; </p>
+            <p>価格</p>
+          </div>
+        </div>
+        <div class="function-box">
+          <div class="function1">
+            <p style="font-size: 18px;">3. &nbsp; </p>
+            <p>BMI</p>
+          </div>
+          <div class="function1">
+            <p style="font-size: 18px;">4. &nbsp; </p>
+            <p>ベジタリアンのか</p>
+          </div>
+        </div>
+        <div class="function-box">
+          <div class="function1">
+            <p style="font-size: 18px;">5. &nbsp; </p>
+            <p>移動距離</p>
+          </div>
+          <div class="function1">
+            <p style="font-size: 18px;">6. &nbsp; </p>
+            <p>評価</p>
+          </div>
+        </div>
+        <div class="function-box">
+          <div class="function1">
+            <p style="font-size: 18px;">7. &nbsp; </p>
+            <p>レビュー数</p>
+          </div>
+          <div class="function1">
+            <p style="font-size: 18px;">8. &nbsp; </p>
+            <p>ユーザーが気に入ったレコード</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-top color-box">
+      <h1>開発</h1>
+      <img src="/static/asset/archi2.jpg" class="archi-img"/>
+    </div>
+
+    <div class="padding-top">
+      <h1>ショーケース</h1>
+      <div class="align-center">
+        <p>スライドショーは、モバイル アプリの<span class="highlight">スクリーンショット</span> のセットです。</p>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="/static/asset/1-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/2-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/3-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/4-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/5-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/6-01.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="/static/asset/7-01.png" style="width:100%">
+        </div>
+      </div>
+
+      <div class="dot-container fade">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+
+  <div class="footer">
+    <h4>@ 2023 / JOON</h4>
+  </div>
+
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    function currentSlide(n) {
+      slideIndex = n;
+      showSlides();
+    }
+  </script>
+</body>
+
+</html>

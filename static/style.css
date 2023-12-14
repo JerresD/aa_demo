@@ -1,0 +1,174 @@
+.main-background {
+    background-color: #d7cdc1;
+    overflow: hidden;
+    /* background-image: url(/static/asset/3.jpg); */
+    background: linear-gradient(#d7cdc140, #bbac9940), url(/static/asset/3.jpg);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 400px;
+    padding: 20px;
+    
+}
+
+.main-title {
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 100px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+}
+
+.main-title h2 {
+    font-size: 30px;
+}
+
+.main-title a {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.start {
+    padding: 0 80px;
+}
+
+.flex {
+    display: flex;
+}
+
+.padding-top {
+    padding: 30px 0;
+}
+
+.align-center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-img-container img {
+    height: auto;
+    width: 320px;
+    object-fit: cover;
+    object-position: 15% 100%;
+}
+
+.start h3 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.start p {
+    font-weight: 600;
+}
+
+.heading2 {
+    margin-left: 40px;
+}
+
+.module-container {
+    border: #d3c9bd solid 2px;
+    padding: 10px;
+    margin: 20px 20px;
+}
+
+.module-box {
+    background-color: #d3c9bd;
+    padding: 30px;
+    width:150px;
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.dot-container {
+    text-align: center;
+    padding:20px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+.function-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 700px;
+}
+
+.function1 {
+    padding: 10px 10px 10px 20px;
+    margin: 10px 20px;
+    background-color: #fff8f0;
+    width:100%;
+    border-bottom: #0f2b46 2px solid; 
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.color-box {
+    /* background-color: #efe7de; */
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.archi-img {
+    width: 50%;
+    height:auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
